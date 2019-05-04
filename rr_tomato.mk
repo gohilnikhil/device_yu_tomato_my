@@ -15,28 +15,28 @@
 
 $(call inherit-product, device/yu/tomato/full_tomato.mk)
 
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_mini_phone.mk)
+# Inherit some common RR stuff.
+$(call inherit-product, vendor/rr/config/common_full_phone.mk)
+$(call inherit-product, vendor/rr/config/BoardConfigLineage.mk)
 
 # Must define platform variant before including any common things
 TARGET_BOARD_PLATFORM_VARIANT := msm8939
 
 #User
-export KBUILD_BUILD_USER=rajesh
-export KBUILD_BUILD_HOST=xda
-PRODUCT_NAME := lineage_tomato
+export KBUILD_BUILD_USER=nikhilgohil
+export KBUILD_BUILD_HOST=nikhilgohil
+PRODUCT_NAME := rr_tomato
 BOARD_VENDOR := yu
 PRODUCT_DEVICE := tomato
+PRODUCT_MODEL := AO5510
 
 # Vendor security patch level
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.lineage.build.vendor_security_patch=2019-04-03
+ro.lineage.build.vendor_security_patch=2017-12-05
 
 PRODUCT_GMS_CLIENTID_BASE := android-micromax
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="YUREKA-user 5.1.1 LMY49J YOG4PAS8A4 release-keys" \
-    PRODUCT_NAME=YUREKA \
-    TARGET_DEVICE=YUREKA
+    PRIVATE_BUILD_DESC="YUREKA-user 5.1.1 LMY49J YOG4PAS8A4 release-keys"
 
 BUILD_FINGERPRINT := YU/YUREKA/YUREKA:5.1.1/LMY49J/YOG4PAS8A4:user/release-keys
